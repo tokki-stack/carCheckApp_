@@ -1,0 +1,24 @@
+<div class="page-layout blank p-24" fusePerfectScrollbar>
+
+    <!-- <h2>{{'SAMPLE.HELLO' | translate}}</h2> -->
+    <img class="carCheckImg" src="./../../../assets/coreImages/carcheck.png"/>
+    <div style="display: flex;">
+        <mat-select-country appearance="outline" 
+                        (onCountrySelected)="onCountrySelected($event)">
+        </mat-select-country>
+
+        <mat-select *ngIf="stateFlag"  style="margin: 26px; font-size: 16px;">
+            <mat-option *ngFor="let state of usStates" [value]="state.abbreviation">
+            {{state.name}}
+            </mat-option>
+        </mat-select>
+    </div>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Car License" value="">
+        </mat-form-field>
+    </form>
+    <div class="example-button-row">
+        <button mat-raised-button color="accent">Accent</button>
+    </div>
+</div>
