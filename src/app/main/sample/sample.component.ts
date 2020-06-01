@@ -6,6 +6,8 @@ import { locale as english } from './i18n/en';
 import { locale as turkish } from './i18n/tr';
 import {Country} from '@angular-material-extensions/select-country';
 import { USStateService } from 'ng2-us-states';
+import { Router } from '@angular/router';
+
 @Component({
     selector   : 'sample',
     templateUrl: './sample.component.html',
@@ -21,12 +23,15 @@ export class SampleComponent
     usStates: any;
     australliaStates: any;
     stateFlag: boolean;
+    recaptchaFlag: boolean;
     constructor(
         private _fuseTranslationLoaderService: FuseTranslationLoaderService,
-        private usStateService: USStateService
+        private usStateService: USStateService,
+        private router: Router,
     )
     {
         this.stateFlag = false;
+        this.recaptchaFlag = false;
         this._fuseTranslationLoaderService.loadTranslations(english, turkish);
         this.usStates = [];
         this.australliaStates = [
@@ -59,5 +64,12 @@ export class SampleComponent
             this.stateFlag = false;
 
         }
+    }
+    btnClick(){
+        this.recaptchaFlag = true;
+    }
+    resolved(captchaResponse: string) {
+        console.log(`Resolved captcha with response: ${captchaResponse}`);
+        this.router.navigate(['/detail']);
     }
 }

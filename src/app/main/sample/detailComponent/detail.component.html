@@ -2,7 +2,7 @@
 
     <!-- <h2>{{'SAMPLE.HELLO' | translate}}</h2> -->
     <img class="carCheckImg" src="./../../../assets/coreImages/carcheck.png"/>
-    <div style="display: flex;">
+    <!-- <div style="display: flex;">
         <mat-select-country appearance="outline" 
                         (onCountrySelected)="onCountrySelected($event)">
         </mat-select-country>
@@ -18,8 +18,15 @@
           <input matInput placeholder="Car License" value="">
         </mat-form-field>
     </form>
-    <div class="example-button-row" style="display: flex; justify-content: center;">
+    <div class="example-button-row">
         <button mat-raised-button color="accent" (click) = "btnClick()">Check</button>
     </div>
-    <re-captcha *ngIf="recaptchaFlag" (resolved)="resolved($event)" siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></re-captcha>
+    <re-captcha *ngIf="recaptchaFlag" (resolved)="resolved($event)" siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></re-captcha> -->
+    <div>
+        <p>data here</p>
+    </div>
+    <div class="example-button-row" style="display: flex; justify-content: center;">
+        <button mat-raised-button color="accent" (click) = "btnClick()">Update</button>
+    </div>
 </div>
+<!-- <p>details</p> -->
